@@ -1,10 +1,13 @@
-package codepressed.spotify.service;
+package codepressed.spotify.service.impl;
 
 
 import codepressed.spotify.model.Playlist;
 import codepressed.spotify.repository.PlaylistRepository;
+import codepressed.spotify.service.PlaylistService;
+import org.springframework.stereotype.Service;
 
-public class PlaylistServiceImpl implements PlaylistService{
+@Service
+public class PlaylistServiceImpl implements PlaylistService {
 
     private final PlaylistRepository playlistRepository;
 

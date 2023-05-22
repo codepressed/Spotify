@@ -22,9 +22,10 @@ public class Playlist {
     @ManyToOne
     private User owner;
 
-    public Playlist(String name, String description, Boolean isPublic, List<Track> tracks) {
+    public Playlist(String name, String description, Boolean isPublic, List<Track> tracks, User user) {
         this.name = name;
         this.description = description;
         this.isPublic = isPublic;
+        this.owner = user;
     }
 }
