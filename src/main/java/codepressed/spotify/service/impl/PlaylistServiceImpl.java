@@ -6,6 +6,8 @@ import codepressed.spotify.repository.PlaylistRepository;
 import codepressed.spotify.service.PlaylistService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PlaylistServiceImpl implements PlaylistService {
 
@@ -18,5 +20,10 @@ public class PlaylistServiceImpl implements PlaylistService {
     @Override
     public Playlist save(Playlist playlist) {
         return playlistRepository.save(playlist);
+    }
+
+    @Override
+    public List<Playlist> findAll() {
+        return playlistRepository.findAll();
     }
 }

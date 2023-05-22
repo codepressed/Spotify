@@ -9,14 +9,12 @@ import codepressed.spotify.repository.TrackRepository;
 import codepressed.spotify.repository.UserRepository;
 import codepressed.spotify.service.PlaylistService;
 import codepressed.spotify.service.TrackService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("/track")
 public class TrackController {
 
     private final TrackService trackService;
@@ -27,12 +25,12 @@ public class TrackController {
         this.playlistService = playlistService;
     }
 
-    @GetMapping("/tracks")
+    @GetMapping("/all")
     public List<Track> getAllTracks(){
         return trackService.findAll();
     }
 
-    @PostMapping("track/add")
+    @PostMapping("/add")
     public Track createTrack(@RequestBody Track track){
         return trackService.save(track);
     }
